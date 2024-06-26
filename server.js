@@ -13,6 +13,10 @@ mongoose.connect(uri)
 
 app.use(cors());
 
+app.get('/', (req, res) => {
+    res.send('Hello World')
+  })
+
 app.get('/data', async (req, res) => {
     try {
         const data = await Data.find();
